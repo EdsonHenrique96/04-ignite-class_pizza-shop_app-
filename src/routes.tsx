@@ -16,7 +16,6 @@ export const Router = createBrowserRouter([
       },
     ],
   },
-
   {
     path: '/',
     element: <AuthLayout />,
