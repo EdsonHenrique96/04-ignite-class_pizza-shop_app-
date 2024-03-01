@@ -39,12 +39,6 @@ export function RevenueChart() {
       <CardContent>
         <ResponsiveContainer width="100%" height={240}>
           <LineChart data={data} style={{ fontSize: 12 }}>
-            <Line
-              type="linear"
-              dataKey="revenue"
-              strokeWidth={2}
-              stroke={colors.violet[500]}
-            />
             <YAxis
               stroke="#888"
               tickLine={false}
@@ -59,6 +53,12 @@ export function RevenueChart() {
             />
             <XAxis dataKey="date" tickLine={false} axisLine={false} dy={16} />
             <CartesianGrid vertical={false} className="stroke-muted" />
+            <Line
+              type="linear"
+              dataKey="revenue"
+              strokeWidth={2}
+              stroke={colors.violet[500]}
+            />
           </LineChart>
         </ResponsiveContainer>
       </CardContent>
