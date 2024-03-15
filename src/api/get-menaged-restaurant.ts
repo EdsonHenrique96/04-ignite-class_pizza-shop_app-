@@ -3,6 +3,7 @@ import { api } from '@/lib/axios'
 interface GetManagedRestaurantResponse {
   id: string
   name: string
+  description: string
   createdAt: Date | null
   updatedAt: Date | null
   managerId: string | null
