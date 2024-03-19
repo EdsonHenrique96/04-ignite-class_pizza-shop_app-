@@ -4,7 +4,7 @@ export interface GetOrdersResponse {
   orders: {
     orderId: string
     createdAt: string
-    status: 'pending' | 'cancelled' | 'processing' | 'delivering' | 'devilered'
+    status: 'pending' | 'canceled' | 'processing' | 'delivering' | 'delivered'
     customerName: string
     total: number
   }[]
@@ -15,9 +15,13 @@ export interface GetOrdersResponse {
   }
 }
 
-export async function GetOrders() {
+interface GetOrdersQuery {
+  pageIndex?: number
+}
+
+export async function GetOrders({ pageIndex = 0 }: GetOrdersQuery) {
   const response = await api.get<GetOrdersResponse>('/orders', {
-    params: { pageIndex: 0 },
+    params: { pageIndex },
   })
 
   return response.data

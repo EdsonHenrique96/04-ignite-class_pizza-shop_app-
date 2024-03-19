@@ -1,16 +1,16 @@
 type OrderStatus =
   | 'pending'
-  | 'cancelled'
+  | 'canceled'
   | 'processing'
   | 'delivering'
-  | 'devilered'
+  | 'delivered'
 
 const orderStatusMap: Record<OrderStatus, { text: string; color: string }> = {
   pending: {
     text: 'Pendente',
     color: 'bg-slate-400',
   },
-  cancelled: {
+  canceled: {
     text: 'Cancelado',
     color: 'bg-rose-500',
   },
@@ -18,7 +18,7 @@ const orderStatusMap: Record<OrderStatus, { text: string; color: string }> = {
     text: 'Em Entrega',
     color: 'bg-amber-500',
   },
-  devilered: {
+  delivered: {
     text: 'Entregue',
     color: 'bg-emerald-500',
   },
