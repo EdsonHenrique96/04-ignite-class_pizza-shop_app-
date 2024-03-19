@@ -35,7 +35,7 @@ export function OrderTableRow({ order }: OrderTableRowProps) {
         </Dialog>
       </TableCell>
       <TableCell className="font-mono text-xs font-medium">
-        129hed7ehd278dh1790912
+        {order.orderId}
       </TableCell>
       <TableCell className="text-muted-foreground">
         {formatDistanceToNow(order.createdAt, {
