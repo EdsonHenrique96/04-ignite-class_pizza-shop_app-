@@ -20,13 +20,15 @@ import {
   TableRow,
 } from '@/components/ui/table'
 
+import { OrderDetailSkeleton } from './order-details-skeleton'
+
 interface OrderDatailsProps {
   orderId: string
   shouldLoadData: boolean
 }
 
 export function OrderDetails({ orderId, shouldLoadData }: OrderDatailsProps) {
-  const { data: order } = useQuery({
+  const { data: order, isLoading } = useQuery({
     queryKey: ['order', orderId],
     queryFn: () => getOrderDetails({ orderId }),
     enabled: shouldLoadData,
@@ -38,6 +40,8 @@ export function OrderDetails({ orderId, shouldLoadData }: OrderDatailsProps) {
         <DialogTitle>Pedido: {orderId}</DialogTitle>
         <DialogDescription>Detalhes do pedido</DialogDescription>
       </DialogHeader>
+
+      {isLoading && <OrderDetailSkeleton />}
 
       {order && (
         <div className="space-y-6">
